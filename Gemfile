@@ -72,3 +72,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'friendly_id', '~> 5.4.0'
+
+
+gem 'mini_racer'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.7'
+end
