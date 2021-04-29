@@ -7,19 +7,29 @@ RSpec.describe Project, type: :model do
             expect(project.valid?).to eq(false)
         end
 
+        it "ensures the subtitle is present" do
+            project = Project.new(title: "Content of the description")
+            expect(project.valid?).to eq(false)
+        end
+
+        it "ensures the images is present" do
+            project = Project.new(title: "Content of the description")
+            expect(project.valid?).to eq(false)
+        end
+
         it "ensures the description is present" do
             project = Project.new(title: "Title")
             expect(project.valid?).to eq(false)
         end
 
         it "should be able to save project" do
-            project = Project.new(title: "Title", description: "Some description content goes here")
+            project = Project.new(title: "Title", subtitle: "my subtitle", images: "Path/to/image", description: "Some description content goes here")
             expect(project.save).to eq(true)
         end
     end
 
     context "scope tests" do
-        let(:params) { { title: "Title", description: "some description" } }
+        let(:params) { { title: "Title", subtitle: "my subtitle", images: "Path/to/image", description: "some description" } }
         before(:each) do
             Project.create(params)
             Project.create(params)
@@ -29,6 +39,6 @@ RSpec.describe Project, type: :model do
         it "should return all projects" do
             expect(Project.count()).to eq(3)
         end
-        
+
     end
 end

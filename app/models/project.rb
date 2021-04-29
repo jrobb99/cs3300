@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
 
-    validates_presence_of :title, :description
+    validates_presence_of :title, :subtitle, :images, :description
 
     extend FriendlyId
     friendly_id :title, use: :slugged

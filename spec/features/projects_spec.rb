@@ -11,6 +11,8 @@ RSpec.feature "Projects", type: :feature do
 
     scenario "should be successful" do
       fill_in "Description", with: "Test description"
+      fill_in "Subtitle", with: "subtitle"
+      fill_in "Images", with: "path/to/image"
       click_button "Create Project"
       expect(page).to have_content("Project was successfully created")
     end
@@ -22,7 +24,7 @@ RSpec.feature "Projects", type: :feature do
   end
 
   context "Update project" do
-    let(:project) { Project.create(title: "Test title", description: "Test content") }
+    let(:project) { Project.create(title: "Test title", subtitle: "my subtitle", images: "Path/to/image", description: "Test content") }
     before(:each) do
       visit edit_project_path(project)
     end
@@ -45,7 +47,7 @@ RSpec.feature "Projects", type: :feature do
   end
 
   context "Remove existing project" do
-    let!(:project) { Project.create(title: "Test title", description: "Test content") }
+    let!(:project) { Project.create(title: "Test title", subtitle: "my subtitle", images: "Path/to/image", description: "Test content") }
     scenario "remove project" do
       visit projects_path
       click_link "Destroy"
