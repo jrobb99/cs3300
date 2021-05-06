@@ -5,10 +5,7 @@ SimpleCov.start 'rails' do
   add_filter '/spec/' # for rspec
   add_filter '/channels/'
   add_filter '/helpers/'
-  add_filter '/models/application_record.rb'
-  add_filter '/models/user.rb'
   add_filter '/jobs/'
-  add_filter '/mailers/'
 end 
 
 
