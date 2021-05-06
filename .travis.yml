@@ -13,8 +13,8 @@ script:
  
 deploy:
  provider: heroku
- api_key: 32290437-ddaa-4ce7-aa4a-2f245b667fec
- app: nameless-taiga-22816
+ api_key: c396f8c7-9d5b-4ae5-8b16-bda33f067544
+ app: blooming-hamlet-30711
  run: "rake db:migrate"
  on:
   all_branches: true
