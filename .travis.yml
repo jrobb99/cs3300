@@ -13,8 +13,8 @@ script:
  
 deploy:
  provider: heroku
- api_key: 33d744c6-453a-4d48-ba5f-2af231f46e69
- app: nameless-taiga-22816
+ api_key: "33d744c6-453a-4d48-ba5f-2af231f46e69"
+ app: "nameless-taiga-22816"
  run: "rake db:migrate"
  on:
   all_branches: true
