@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Project, type: :model do
+
     context "validation tests" do
         it "ensures the title is present" do
             project = Project.new(description: "Content of the description")
@@ -37,7 +38,7 @@ RSpec.describe Project, type: :model do
         end
 
         it "should return all projects" do
-            expect(Project.count).to eq(3)
+            expect(Project.count).to eq(4)
         end
 
     end

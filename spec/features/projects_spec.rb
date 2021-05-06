@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
+
   context "Create new project" do
     before(:each) do
       visit new_project_path
