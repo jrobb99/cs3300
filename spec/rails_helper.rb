@@ -7,6 +7,8 @@ SimpleCov.start 'rails' do
   add_filter '/helpers/'
   add_filter '/jobs/'
   add_filter '/mailers/'
+  add_filter '/models/application_record.rb'
+  add_filter '/models/user.rb'
 end 
 
 
