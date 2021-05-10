@@ -1,37 +1,33 @@
 <% provide(:page_title, 'All Projects') %>
 
-
-
-<h1>Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Images</th>
-      <th>Description</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<main role="main">
+  <div class="jumbotron" style="padding: 2rem 1rem;margin-bottom: 2rem;background-color: #e9ecef;border-radius: .3rem;">
+    <div class="container">
+      <h1 class="display-3">Hello, <%= current_user.email%></h1>
+      <p>Welcome to the project page. You are now viewing all your projects. Click to <i>show, edit, or delete</i> projects. Click the <i>new project</i> button to create a new project.</p>
+      <%= link_to 'New Project', new_project_path, :class => "btn btn-primary btn-lg", :role => "button" %>
+    </div>
+  </div>
+      
+  <div class="container">
+    <div class="row">
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.subtitle %></td>
-        <td><%= project.images %></td>
-        <td><%= project.description %></td>
-        <td><%= project.slug %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="col-md-4">
+          <h2><%= project.title %></h2>
+          <p><%= project.subtitle %></p>
+          <p><%= project.images %></p>
+          <p><%= project.description %></p>
+          <%= link_to 'Show', project, :class => "btn btn-secondary", :role => "button" %>
+          <%= link_to 'Edit', edit_project_path(project), :class => "btn btn-secondary", :role => "button"  %>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-secondary", :role => "button"  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
 
 <br>
+<hr>
 
-<%= link_to 'New Project', new_project_path %>
+
+
